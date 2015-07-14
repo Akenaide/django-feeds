@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from datetime import datetime
 from dateutil.parser import parse as dateutil_parser
 from subprocess import call
@@ -234,7 +236,7 @@ class Entry(models.Model):
         summary = Summary(self.link, parser)
         
         if not hasattr(summary, 'content'):
-            print "No summary was found!"
+            print("No summary was found!")
             
             # TODO: Note there was an error instead of setting as summarized
             self.summarized = True

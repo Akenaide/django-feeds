@@ -1,4 +1,6 @@
 # Code adapted from https://github.com/Rotten194/summarize.py
+from __future__ import print_function
+
 import imp
 import itertools
 import nltk
@@ -88,7 +90,7 @@ class Summary(object):
         try:
             self.soup = bs4.BeautifulSoup(requests.get(url).text, parser)
         except requests.exceptions.ConnectionError:
-            print "Connection error getting url data"
+            print("Connection error getting url data")
             return None
         self.title = self.soup.title.string if self.soup.title else None
         
